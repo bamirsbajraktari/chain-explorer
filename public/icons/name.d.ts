@@ -13,6 +13,7 @@
 	| "arrows/north-east"
 	| "arrows/south-east"
 	| "arrows/up-down"
+	| "banner/bg-image"
 	| "beta_xs"
 	| "beta"
 	| "blob"

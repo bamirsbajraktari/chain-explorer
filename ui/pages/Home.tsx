@@ -7,8 +7,8 @@ import LatestBlocks from 'ui/home/LatestBlocks';
 import LatestZkEvmL2Batches from 'ui/home/LatestZkEvmL2Batches';
 import Stats from 'ui/home/Stats';
 import Transactions from 'ui/home/Transactions';
-import AdBanner from 'ui/shared/ad/AdBanner';
-import IconSvg from 'ui/shared/IconSvg';
+// import AdBanner from 'ui/shared/ad/AdBanner';
+// import IconSvg from 'ui/shared/IconSvg';
 import ProfileMenuDesktop from 'ui/snippets/profileMenu/ProfileMenuDesktop';
 import SearchBar from 'ui/snippets/searchBar/SearchBar';
 import WalletMenuDesktop from 'ui/snippets/walletMenu/WalletMenuDesktop';
@@ -25,18 +25,11 @@ const Home = () => {
         padding={{ base: '24px', lg: '48px' }}
         minW={{ base: 'unset', lg: '900px' }}
         data-label="hero plate"
+        backgroundRepeat="no-repeat"
+        backgroundSize="cover"
         position="relative"
         overflow="hidden"
       >
-        <IconSvg
-          name="banner/bg-image"
-          position="absolute"
-          right={ 0 }
-          top={ -100 }
-          bottom={ 0 }
-          boxSize={{ base: 300, lg: 500 }}
-
-        />
         <Flex mb={{ base: 6, lg: 8 }} justifyContent="space-between" alignItems="center">
           <Heading
             as="h1"
@@ -56,7 +49,7 @@ const Home = () => {
       </Box>
       <Stats/>
       <ChainIndicators/>
-      <AdBanner mt={{ base: 6, lg: 8 }} mx="auto" display="flex" justifyContent="center"/>
+      { /* <AdBanner mt={{ base: 6, lg: 8 }} mx="auto" display="flex" justifyContent="center"/> */ }
       <Flex mt={ 8 } direction={{ base: 'column', lg: 'row' }} columnGap={ 12 } rowGap={ 8 }>
         { rollupFeature.isEnabled && rollupFeature.type === 'zkEvm' ? <LatestZkEvmL2Batches/> : <LatestBlocks/> }
         <Box flexGrow={ 1 }>

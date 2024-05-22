@@ -30,6 +30,12 @@ const Footer = () => {
   const apiVersionUrl = getApiVersionUrl(backendVersionData?.backend_version);
   const BLOCKSCOUT_LINKS = [
     {
+      icon: 'globe' as const,
+      iconSize: '24px',
+      text: 'Website',
+      url: 'https://niza.io',
+    },
+    {
       icon: 'edit' as const,
       iconSize: '16px',
       text: 'Submit an issue',
@@ -52,12 +58,6 @@ const Footer = () => {
       iconSize: '18px',
       text: 'X (ex-Twitter)',
       url: 'https://twitter.com/nizacoin',
-    },
-    {
-      icon: 'social/discord' as const,
-      iconSize: '24px',
-      text: 'Discord',
-      url: 'http://discord.gg/Niza',
     },
   ];
 

@@ -2,6 +2,7 @@ import { Flex, Divider, useColorModeValue } from '@chakra-ui/react';
 import React from 'react';
 
 import config from 'configs/app';
+import NetworkAddToWallet from 'ui/shared/NetworkAddToWallet';
 
 import Settings from './settings/Settings';
 import SwapButton from './SwapButton';
@@ -21,13 +22,14 @@ const TopBar = () => {
       alignItems="center"
     >
       <TopBarStats/>
-      <Flex alignItems="center">
+      <Flex alignItems="center" gap="3">
         { feature.isEnabled && (
           <>
             <SwapButton/>
             <Divider mr={ 3 } ml={{ base: 2, sm: 3 }} height={ 4 } orientation="vertical"/>
           </>
         ) }
+        <NetworkAddToWallet isTopNav={ true }/>
         <Settings/>
       </Flex>
     </Flex>

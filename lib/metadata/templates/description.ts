@@ -2,7 +2,7 @@ import type { Route } from 'nextjs-routes';
 
 // equal og:description
 // eslint-disable-next-line max-len
-const DEFAULT_TEMPLATE = 'Blockscout is the #1 open-source blockchain explorer available today. 100+ chains and counting rely on Blockscout data availability, APIs, and ecosystem tools to support their networks.';
+const DEFAULT_TEMPLATE = 'Niza Chain Explorer is a tool for inspecting and analyzing the Niza Blockchain. Explore transactions, blocks, and smart contracts with ease and precision.';
 
 // FIXME all page descriptions will be updated later
 const TEMPLATE_MAP: Record<Route['pathname'], string> = {

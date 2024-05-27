@@ -143,6 +143,7 @@ const Transactions = () => {
       <PageTitle title="Transactions" withTextAd/>
       <TxsStats/>
       <RoutedTabs
+        backgroundColor="transparent"
         tabs={ tabs }
         tabListProps={ isMobile ? undefined : TAB_LIST_PROPS }
         rightSlot={ (

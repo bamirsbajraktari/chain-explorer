@@ -43,8 +43,8 @@ const StatsWidget = ({ label, value, valuePrefix, valuePostfix, isLoading, hint,
       <Flex
         alignItems="flex-start"
         bgColor={ isLoading ? skeletonBgColor : bgColor }
-        px={ 3 }
-        py={{ base: 2, lg: 3 }}
+        px={ 5 }
+        py={{ base: 4, lg: 5 }}
         borderRadius="md"
         justifyContent="space-between"
         columnGap={ 3 }
@@ -57,7 +57,8 @@ const StatsWidget = ({ label, value, valuePrefix, valuePostfix, isLoading, hint,
           <Skeleton
             isLoaded={ !isLoading }
             color="text_secondary"
-            fontSize="xs"
+            fontSize="md"
+            fontWeight="600"
             w="fit-content"
           >
             <span>{ label }</span>
@@ -66,11 +67,11 @@ const StatsWidget = ({ label, value, valuePrefix, valuePostfix, isLoading, hint,
             isLoaded={ !isLoading }
             display="flex"
             alignItems="baseline"
-            mt={ 1 }
+            mt={ 3 }
           >
-            { valuePrefix && <chakra.span fontWeight={ 500 } fontSize="lg" lineHeight={ 6 } whiteSpace="pre">{ valuePrefix }</chakra.span> }
-            <TruncatedValue isLoading={ isLoading } fontWeight={ 500 } fontSize="lg" lineHeight={ 6 } value={ value }/>
-            { valuePostfix && <chakra.span fontWeight={ 500 } fontSize="lg" lineHeight={ 6 } whiteSpace="pre">{ valuePostfix }</chakra.span> }
+            { valuePrefix && <chakra.span fontWeight={ 500 } fontSize="xl" lineHeight={ 6 } whiteSpace="pre">{ valuePrefix }</chakra.span> }
+            <TruncatedValue isLoading={ isLoading } fontWeight={ 500 } fontSize="xl" lineHeight={ 6 } value={ value }/>
+            { valuePostfix && <chakra.span fontWeight={ 500 } fontSize="xl" lineHeight={ 6 } whiteSpace="pre">{ valuePostfix }</chakra.span> }
             { diff && Number(diff) > 0 && (
               <>
                 <Text fontWeight={ 500 } ml={ 2 } mr={ 1 } fontSize="lg" lineHeight={ 6 } color="green.500">
@@ -79,7 +80,7 @@ const StatsWidget = ({ label, value, valuePrefix, valuePostfix, isLoading, hint,
                 <Text variant="secondary" fontSize="sm">({ diffPeriod })</Text>
               </>
             ) }
-            { period && <Text variant="secondary" fontSize="xs" ml={ 1 }>({ period })</Text> }
+            { period && <Text variant="secondary" fontSize="sm" ml={ 1 }>({ period })</Text> }
           </Skeleton>
         </Box>
         { hint && (

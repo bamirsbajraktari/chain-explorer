@@ -9,7 +9,11 @@ type Props = {
   px?: string | number;
 }
 
-export default function useNavLinkProps({ isExpanded, isCollapsed, isActive }: Props) {
+export default function useNavLinkProps({
+  isExpanded,
+  isCollapsed,
+  isActive,
+}: Props) {
   const colors = useColors();
 
   return {
@@ -26,7 +30,11 @@ export default function useNavLinkProps({ isExpanded, isCollapsed, isActive }: P
       variant: 'inherit',
       fontSize: 'sm',
       lineHeight: '20px',
-      opacity: { base: '1', lg: isExpanded ? '1' : '0', xl: isCollapsed ? '0' : '1' },
+      opacity: {
+        base: '1',
+        lg: isExpanded ? '1' : '0',
+        xl: isCollapsed ? '0' : '1',
+      },
       transitionProperty: 'opacity',
       transitionDuration: 'normal',
       transitionTimingFunction: 'ease',

@@ -16,14 +16,15 @@ const variantSimple = definePartsStyle((props) => {
     th: {
       border: 0,
       color: mode('blackAlpha.700', 'whiteAlpha.700')(props),
-      backgroundColor: mode('blackAlpha.100', 'whiteAlpha.200')(props),
+      // backgroundColor: mode('blackAlpha.100', 'whiteAlpha.200')(props),
+      backgroundColor: '#1D2939',
       ...transitionProps,
     },
     thead: {
       ...transitionProps,
     },
     td: {
-      borderColor: 'divider',
+      borderColor: '#344054',
       ...transitionProps,
     },
   };

@@ -56,6 +56,7 @@ const TokensActionBar = ({
         py={ inTabsSlot ? 0 : undefined }
         justifyContent={ inTabsSlot ? 'space-between' : undefined }
         display={{ base: pagination.isVisible ? 'flex' : 'none', lg: 'flex' }}
+        backgroundColor="transparent"
       >
         <HStack spacing={ 3 } display={{ base: 'none', lg: 'flex' }}>
           { filter }

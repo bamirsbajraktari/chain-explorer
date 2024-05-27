@@ -33,7 +33,7 @@ const LatestBlocksItem = ({ block, isLoading }: Props) => {
       transitionTimingFunction="linear"
       borderRadius="md"
       border="1px solid"
-      borderColor="divider"
+      borderColor="#667085"
       p={ 6 }
     >
       <Flex alignItems="center" overflow="hidden" w="100%" mb={ 3 }>

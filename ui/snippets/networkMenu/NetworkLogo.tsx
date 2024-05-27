@@ -44,18 +44,16 @@ const LogoFallback = ({ isCollapsed, isSmall }: { isCollapsed?: boolean; isSmall
 const NetworkLogo = ({ isCollapsed, onClick, className }: Props) => {
 
   const logoSrc = useColorModeValue(config.UI.sidebar.logo.default, config.UI.sidebar.logo.dark || config.UI.sidebar.logo.default);
-  const iconSrc = useColorModeValue(config.UI.sidebar.icon.default, config.UI.sidebar.icon.dark || config.UI.sidebar.icon.default);
   const darkModeFilter = { filter: 'brightness(0) invert(1)' };
   const logoStyle = useColorModeValue({}, !config.UI.sidebar.logo.dark ? darkModeFilter : {});
-  const iconStyle = useColorModeValue({}, !config.UI.sidebar.icon.dark ? darkModeFilter : {});
 
   return (
     <Box
       className={ className }
       as="a"
       href={ route({ pathname: '/' }) }
-      width={{ base: '120px', lg: isCollapsed === false ? '120px' : '30px', xl: isCollapsed ? '30px' : '120px' }}
-      height={{ base: '24px', lg: isCollapsed === false ? '24px' : '30px', xl: isCollapsed ? '30px' : '24px' }}
+      width={{ base: '150px', lg: isCollapsed === false ? '150px' : '30px', xl: isCollapsed ? '30px' : '150px' }}
+      height={{ base: '30px', lg: isCollapsed === false ? '30px' : '30px', xl: isCollapsed ? '30px' : '30px' }}
       display="inline-flex"
       overflow="hidden"
       onClick={ onClick }
@@ -73,7 +71,7 @@ const NetworkLogo = ({ isCollapsed, onClick, className }: Props) => {
         style={ logoStyle }
       />
       { /* small logo */ }
-      <Image
+      { /* <Image
         w="auto"
         h="100%"
         src={ iconSrc }
@@ -81,7 +79,7 @@ const NetworkLogo = ({ isCollapsed, onClick, className }: Props) => {
         fallback={ <LogoFallback isCollapsed={ isCollapsed } isSmall/> }
         display={{ base: 'none', lg: isCollapsed === false ? 'none' : 'block', xl: isCollapsed ? 'block' : 'none' }}
         style={ iconStyle }
-      />
+      /> */ }
     </Box>
   );
 };

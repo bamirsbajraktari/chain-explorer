@@ -38,6 +38,9 @@ const FilterInput = ({ onChange, className, size = 'sm', placeholder, initialVal
       className={ className }
       minW="250px"
       borderRadius="base"
+      _active={{
+        border: 'none',
+      }}
     >
       <InputGroup
         size={ size }
@@ -56,6 +59,9 @@ const FilterInput = ({ onChange, className, size = 'sm', placeholder, initialVal
           placeholder={ placeholder }
           borderWidth="2px"
           textOverflow="ellipsis"
+          _focus={{
+            borderColor: useColorModeValue('primary.dark', 'primary.medium'),
+          }}
           whiteSpace="nowrap"
         />
 

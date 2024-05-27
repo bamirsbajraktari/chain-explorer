@@ -42,9 +42,9 @@ const LatestTxsItem = ({ tx, isLoading }: Props) => {
       width="100%"
       minW="700px"
       borderTop="1px solid"
-      borderColor="divider"
+      borderColor="#344054"
       p={ 4 }
-      _last={{ borderBottom: '1px solid', borderColor: 'divider' }}
+      _last={{ borderBottom: '1px solid', borderColor: '#344054' }}
       display={{ base: 'none', lg: 'grid' }}
     >
       <Flex overflow="hidden" w="100%">

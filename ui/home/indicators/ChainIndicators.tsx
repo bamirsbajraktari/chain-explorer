@@ -98,10 +98,10 @@ const ChainIndicators = () => {
     >
       <Flex flexGrow={ 1 } flexDir="column" order={{ base: 2, lg: 1 }} p={{ base: 6, lg: 0 }}>
         <Flex alignItems="center">
-          <Text fontWeight={ 500 } fontFamily="heading" fontSize="lg">{ indicator?.title }</Text>
+          <Text fontWeight={ 500 } fontFamily="heading" fontSize="lg" color="#fff">{ indicator?.title }</Text>
           { indicator?.hint && <Hint label={ indicator.hint } ml={ 1 }/> }
         </Flex>
-        <Box mb={ 4 }>
+        <Box mb={ 4 } style={{ color: 'white !important' }}>
           { valueTitle }
           { valueDiff }
         </Box>

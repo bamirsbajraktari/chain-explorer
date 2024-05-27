@@ -103,6 +103,11 @@
 	| "score/score-not-ok"
 	| "score/score-ok"
 	| "search"
+	| "sidebar/bar-chart"
+	| "sidebar/coins-stacked"
+	| "sidebar/globe"
+	| "sidebar/settings"
+	| "sidebar/x-square"
 	| "social/canny"
 	| "social/coingecko"
 	| "social/coinmarketcap"
@@ -154,5 +159,6 @@
 	| "wallets/coinbase"
 	| "wallets/metamask"
 	| "wallets/token-pocket"
+	| "warning"
 	| "watchlist";
   

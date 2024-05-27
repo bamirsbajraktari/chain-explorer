@@ -13,21 +13,22 @@ const { definePartsStyle, defineMultiStyleConfig } =
 const $size = cssVar('checkbox-size');
 
 const baseStyleControl = defineStyle((props) => {
-  const { colorScheme: c } = props;
+  // const { colorScheme: c } = props;
 
   return {
     _checked: {
-      bg: mode(`${ c }.500`, `${ c }.300`)(props),
-      borderColor: mode(`${ c }.500`, `${ c }.300`)(props),
+      bg: mode(`primary.medium`, `primary.medium`)(props),
+      borderColor: mode(`primary.dark`, `primary.dark`)(props),
       _hover: {
-        bg: mode(`${ c }.600`, `${ c }.400`)(props),
-        borderColor: mode(`${ c }.600`, `${ c }.400`)(props),
+        bg: mode(`primary.medium`, `primary.medium`)(props),
+        borderColor: mode(`primary.dark`, `primary.dark`)(props),
       },
     },
     _indeterminate: {
-      bg: mode(`${ c }.500`, `${ c }.300`)(props),
-      borderColor: mode(`${ c }.500`, `${ c }.300`)(props),
+      bg: mode(`primary.medium`, `primary.medium`)(props),
+      borderColor: mode(`primary.light`, `primary.light`)(props),
     },
+    outline: 'none',
   };
 });
 

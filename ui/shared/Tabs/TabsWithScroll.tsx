@@ -83,6 +83,7 @@ const TabsWithScroll = ({
   return (
     <Tabs
       className={ className }
+      background="transparent"
       variant={ themeProps.variant || 'soft-rounded' }
       colorScheme={ themeProps.colorScheme || 'blue' }
       isLazy

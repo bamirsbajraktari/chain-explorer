@@ -19,7 +19,7 @@ const hasAvgBlockTime = config.UI.homepage.showAvgBlockTime;
 const rollupFeature = config.features.rollup;
 
 const Stats = () => {
-  const { data, isPlaceholderData, isError, dataUpdatedAt } = useApiQuery('stats', {
+  const { data, isPlaceholderData, dataUpdatedAt } = useApiQuery('stats', {
     queryOptions: {
       refetchOnMount: false,
       placeholderData: HOMEPAGE_STATS,
@@ -40,9 +40,10 @@ const Stats = () => {
     },
   });
 
-  if (isError || zkEvmLatestBatchQuery.isError || zkSyncLatestBatchQuery.isError) {
-    return null;
-  }
+  // if (isError || zkEvmLatestBatchQuery.isError || zkSyncLatestBatchQuery.isError) {
+  //   console.log(isError);
+  //   return null;
+  // }
 
   const isLoading = isPlaceholderData ||
     (rollupFeature.isEnabled && rollupFeature.type === 'zkEvm' && zkEvmLatestBatchQuery.isPlaceholderData) ||

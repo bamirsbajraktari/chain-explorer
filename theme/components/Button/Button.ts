@@ -74,7 +74,7 @@ const variantOutline = defineStyle((props) => {
       borderColor: 'link_hovered',
       bg: 'transparent',
       _active: {
-        bg: props.isActive ? activeBg : 'transparent',
+        bg: 'transparent',
         borderColor: props.isActive ? activeBg : 'link_hovered',
         color: props.isActive ? activeColor : 'link_hovered',
         p: {
@@ -93,7 +93,7 @@ const variantOutline = defineStyle((props) => {
       opacity: 0.2,
     },
     _active: {
-      bg: activeBg,
+      bg: 'transparent',
       borderColor: activeBg,
       color: activeColor,
       _disabled: {

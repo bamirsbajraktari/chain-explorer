@@ -62,7 +62,7 @@ const SocketNewItemsNotice = chakra(({ children, className, url, num, alert, typ
       fontWeight={ 400 }
       fontSize="sm"
       lineHeight={ 5 }
-      bgColor="#c9e897"
+      bgColor="#ACAC224D"
       borderRadius="md"
       color={ color }
     >

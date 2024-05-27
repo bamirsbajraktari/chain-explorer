@@ -1,4 +1,4 @@
-import { Thead, useColorModeValue } from '@chakra-ui/react';
+import { Thead } from '@chakra-ui/react';
 import type { TableHeadProps, PositionProps } from '@chakra-ui/react';
 import throttle from 'lodash/throttle';
 import React from 'react';
@@ -34,7 +34,8 @@ const TheadSticky = ({ top, children, ...restProps }: Props) => {
     ...restProps,
     position: 'sticky' as PositionProps['position'],
     top: `${ top }px` || 0,
-    backgroundColor: useColorModeValue('white', 'black'),
+    // backgroundColor: useColorModeValue('white', 'black'),
+    // backgroundColor: '#1D2939',
     boxShadow: isSticky ? 'md' : 'none',
     zIndex: '1',
   };

@@ -1,4 +1,4 @@
-import { Button, Skeleton, Flex, IconButton, chakra } from '@chakra-ui/react';
+import { Button, Skeleton, Flex, IconButton, chakra, useColorModeValue } from '@chakra-ui/react';
 import React from 'react';
 
 import type { PaginationParams } from './types';
@@ -46,6 +46,8 @@ const Pagination = ({ page, onNextPageClick, onPrevPageClick, resetPage, hasPage
       </Skeleton>
       <Skeleton isLoaded={ !showSkeleton } display="inline-block" borderRadius="base">
         <Button
+          // eslint-disable-next-line react-hooks/rules-of-hooks
+          backgroundColor={ useColorModeValue('primary.light', 'primary.light') }
           variant="outline"
           size="sm"
           isActive

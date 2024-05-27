@@ -1,4 +1,12 @@
-import { InputGroup, Input, InputLeftElement, chakra, useColorModeValue, forwardRef, InputRightElement } from '@chakra-ui/react';
+import {
+  InputGroup,
+  Input,
+  InputLeftElement,
+  chakra,
+  useColorModeValue,
+  forwardRef,
+  InputRightElement,
+} from '@chakra-ui/react';
 import throttle from 'lodash/throttle';
 import React from 'react';
 import type { ChangeEvent, FormEvent, FocusEvent } from 'react';
@@ -21,7 +29,17 @@ interface Props {
 }
 
 const SearchBarInput = (
-  { onChange, onSubmit, isHomepage, isSuggestOpen, onFocus, onBlur, onHide, onClear, value }: Props,
+  {
+    onChange,
+    onSubmit,
+    isHomepage,
+    isSuggestOpen,
+    onFocus,
+    onBlur,
+    onHide,
+    onClear,
+    value,
+  }: Props,
   ref: React.ForwardedRef<HTMLFormElement>,
 ) => {
   const innerRef = React.useRef<HTMLFormElement>(null);
@@ -45,9 +63,12 @@ const SearchBarInput = (
     }
   }, [ isMobile, onHide, isHomepage ]);
 
-  const handleChange = React.useCallback((event: ChangeEvent<HTMLInputElement>) => {
-    onChange(event.target.value);
-  }, [ onChange ]);
+  const handleChange = React.useCallback(
+    (event: ChangeEvent<HTMLInputElement>) => {
+      onChange(event.target.value);
+    },
+    [ onChange ],
+  );
 
   React.useEffect(() => {
     if (!isMobile) {
@@ -62,8 +83,10 @@ const SearchBarInput = (
     };
   }, [ isMobile, handleScroll ]);
 
-  const bgColor = useColorModeValue('white', isHomepage ? 'white' : 'black');
-  const transformMobile = scrollDirection !== 'down' ? 'translateY(0)' : 'translateY(-100%)';
+  // const bgColor = useColorModeValue('white', isHomepage ? 'white' : 'black')
+  const bgColor = useColorModeValue('white', 'white');
+  const transformMobile =
+    scrollDirection !== 'down' ? 'translateY(0)' : 'translateY(-100%)';
 
   return (
     <chakra.form
@@ -78,7 +101,10 @@ const SearchBarInput = (
       position={{ base: isHomepage ? 'static' : 'absolute', lg: 'relative' }}
       top={{ base: isHomepage ? 0 : 55, lg: 0 }}
       left="0"
-      zIndex={{ base: isHomepage ? 'auto' : '-1', lg: isSuggestOpen ? 'popover' : 'auto' }}
+      zIndex={{
+        base: isHomepage ? 'auto' : '-1',
+        lg: isSuggestOpen ? 'popover' : 'auto',
+      }}
       paddingX={{ base: isHomepage ? 0 : 4, lg: 0 }}
       paddingTop={{ base: isHomepage ? 0 : 1, lg: 0 }}
       paddingBottom={{ base: isHomepage ? 0 : 2, lg: 0 }}
@@ -88,13 +114,20 @@ const SearchBarInput = (
       transitionDuration="normal"
       transitionTimingFunction="ease"
     >
-      <InputGroup size={{ base: isHomepage ? 'md' : 'sm', lg: 'md' }}>
-        <InputLeftElement w={{ base: isHomepage ? 6 : 4, lg: 6 }} ml={{ base: isHomepage ? 4 : 3, lg: 4 }} h="100%">
-          <IconSvg name="search" boxSize={{ base: isHomepage ? 6 : 4, lg: 6 }}
-            color={ useColorModeValue('blackAlpha.600', isHomepage ? 'blackAlpha.600' : 'whiteAlpha.600') }/>
+      <InputGroup size={{ base: 'sm' }}>
+        <InputLeftElement
+          w={{ base: isHomepage ? 6 : 4, lg: 6 }}
+          ml={{ base: 3 }}
+          h="100%"
+        >
+          <IconSvg
+            name="search"
+            boxSize={{ base: isHomepage ? 6 : 4, lg: 6 }}
+            color="#667085"
+          />
         </InputLeftElement>
         <Input
-          pl={{ base: isHomepage ? '50px' : '38px', lg: '50px' }}
+          pl={{ base: isHomepage ? '50px' : '38px', lg: '42px' }}
           sx={{
             '@media screen and (max-width: 999px)': {
               paddingLeft: isHomepage ? '50px' : '38px',
@@ -104,17 +137,36 @@ const SearchBarInput = (
               paddingRight: '36px',
             },
           }}
-          placeholder={ isMobile ? 'Search by address / ... ' : 'Search by address / txn hash / block / token... ' }
-          _empty={{ _placeholder: { color: useColorModeValue('blackAlpha.600', isHomepage ? 'blackAlpha.600' : 'whiteAlpha.600') } }}
+          placeholder={
+            isMobile ?
+              'Search by address / ... ' :
+              'Search by address / txn hash / block / token... '
+          }
+          _placeholder={{
+            color: '#667085',
+          }}
+          _empty={{
+            _placeholder: {
+              opacity: 1,
+              color: '#667085',
+            },
+          }}
+          _focus={{
+            borderColor: 'transparent',
+          }}
           onChange={ handleChange }
           border={ isHomepage ? 'none' : '2px solid' }
           borderColor={ useColorModeValue('blackAlpha.100', 'whiteAlpha.200') }
           _focusWithin={{ _placeholder: { color: 'gray.300' } }}
-          color={ useColorModeValue('black', isHomepage ? 'black' : 'white') }
+          color={ useColorModeValue('black', 'black') }
           value={ value }
+          // outline={useColorModeValue('primary.medium', 'primary.medium')}
         />
         { value && (
-          <InputRightElement top={{ base: isHomepage ? '18px' : 2, lg: '18px' }} right={ 2 }>
+          <InputRightElement
+            top={{ base: isHomepage ? '18px' : 2, lg: '18px' }}
+            right={ 2 }
+          >
             <ClearButton onClick={ onClear }/>
           </InputRightElement>
         ) }

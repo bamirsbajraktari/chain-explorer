@@ -1,4 +1,13 @@
-import { Link, Text, HStack, Tooltip, Box, useBreakpointValue, chakra, shouldForwardProp } from '@chakra-ui/react';
+import {
+  Link,
+  Text,
+  HStack,
+  Tooltip,
+  Box,
+  useBreakpointValue,
+  chakra,
+  shouldForwardProp,
+} from '@chakra-ui/react';
 import NextLink from 'next/link';
 import React from 'react';
 
@@ -23,14 +32,25 @@ type Props = {
   disableActiveState?: boolean;
 }
 
-const NavLink = ({ item, isCollapsed, px, className, onClick, disableActiveState }: Props) => {
+const NavLink = ({
+  item,
+  isCollapsed,
+  px,
+  className,
+  onClick,
+  disableActiveState,
+}: Props) => {
   const isMobile = useIsMobile();
   const colors = useColors();
 
   const isExpanded = isCollapsed === false;
   const isInternalLink = isInternalItem(item);
 
-  const styleProps = useNavLinkStyleProps({ isCollapsed, isExpanded, isActive: isInternalLink && item.isActive && !disableActiveState });
+  const styleProps = useNavLinkStyleProps({
+    isCollapsed,
+    isExpanded,
+    isActive: isInternalLink && item.isActive && !disableActiveState,
+  });
   const isXLScreen = useBreakpointValue({ base: false, xl: true });
   const href = isInternalLink ? route(item.nextRoute) : item.url;
 
@@ -39,9 +59,19 @@ const NavLink = ({ item, isCollapsed, px, className, onClick, disableActiveState
       href={ href }
       target={ isInternalLink ? '_self' : '_blank' }
       { ...styleProps.itemProps }
-      w={{ base: '100%', lg: isExpanded ? '100%' : '60px', xl: isCollapsed ? '60px' : '100%' }}
+      w={{
+        base: '100%',
+        lg: isExpanded ? '100%' : '60px',
+        xl: isCollapsed ? '60px' : '100%',
+      }}
       display="flex"
-      px={ px || { base: 3, lg: isExpanded ? 3 : '15px', xl: isCollapsed ? '15px' : 3 } }
+      px={
+        px || {
+          base: 3,
+          lg: isExpanded ? 3 : '15px',
+          xl: isCollapsed ? '15px' : 3,
+        }
+      }
       aria-label={ `${ item.text } link` }
       whiteSpace="nowrap"
       onClick={ onClick }
@@ -54,17 +84,32 @@ const NavLink = ({ item, isCollapsed, px, className, onClick, disableActiveState
       <Tooltip
         label={ item.text }
         hasArrow={ false }
-        isDisabled={ isMobile || isCollapsed === false || (isCollapsed === undefined && isXLScreen) }
+        isDisabled={
+          isMobile ||
+          isCollapsed === false ||
+          (isCollapsed === undefined && isXLScreen)
+        }
         placement="right"
         variant="nav"
         gutter={ 20 }
-        color={ isInternalLink && item.isActive ? colors.text.active : colors.text.hover }
+        color={
+          isInternalLink && item.isActive ?
+            colors.text.active :
+            colors.text.hover
+        }
       >
-        <HStack spacing={ 3 } overflow="hidden">
+        <HStack spacing={ 2 } overflow="hidden">
           <NavLinkIcon item={ item }/>
           <Text { ...styleProps.textProps } as="span">
             <span>{ item.text }</span>
-            { !isInternalLink && <IconSvg name="arrows/north-east" boxSize={ 4 } color="text_secondary" verticalAlign="middle"/> }
+            { !isInternalLink && (
+              <IconSvg
+                name="arrows/north-east"
+                boxSize={ 4 }
+                color="text_secondary"
+                verticalAlign="middle"
+              />
+            ) }
           </Text>
         </HStack>
       </Tooltip>
@@ -77,13 +122,15 @@ const NavLink = ({ item, isCollapsed, px, className, onClick, disableActiveState
         <NextLink href={ item.nextRoute } passHref legacyBehavior>
           { content }
         </NextLink>
-      ) : content }
+      ) : (
+        content
+      ) }
     </Box>
   );
 };
 
 const NavLinkChakra = chakra(NavLink, {
-  shouldForwardProp: (prop) => {
+  shouldForwardProp: prop => {
     const isChakraProp = !shouldForwardProp(prop);
 
     if (isChakraProp && prop !== 'px') {

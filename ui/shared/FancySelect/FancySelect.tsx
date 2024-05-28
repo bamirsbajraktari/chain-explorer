@@ -1,5 +1,12 @@
 import { FormControl, useToken, useColorMode } from '@chakra-ui/react';
-import type { CSSObjectWithLabel, GroupBase, SingleValue, MultiValue, AsyncProps, Props as SelectProps } from 'chakra-react-select';
+import type {
+  CSSObjectWithLabel,
+  GroupBase,
+  SingleValue,
+  MultiValue,
+  AsyncProps,
+  Props as SelectProps,
+} from 'chakra-react-select';
 import { Select, AsyncSelect } from 'chakra-react-select';
 import React from 'react';
 import type { FieldError, FieldErrorsImpl, Merge } from 'react-hook-form';
@@ -14,27 +21,41 @@ interface CommonProps {
   placeholderIcon?: React.ReactNode;
 }
 
-interface RegularSelectProps extends SelectProps<Option, boolean, GroupBase<Option>>, CommonProps {
+interface RegularSelectProps
+  extends SelectProps<Option, boolean, GroupBase<Option>>,
+  CommonProps {
   isAsync?: false;
   onChange: (newValue: SingleValue<Option> | MultiValue<Option>) => void;
 }
 
-interface AsyncSelectProps extends AsyncProps<Option, boolean, GroupBase<Option>>, CommonProps {
+interface AsyncSelectProps
+  extends AsyncProps<Option, boolean, GroupBase<Option>>,
+  CommonProps {
   isAsync: true;
   onChange: (newValue: SingleValue<Option> | MultiValue<Option>) => void;
 }
 
-type Props = RegularSelectProps | AsyncSelectProps;
+type Props = RegularSelectProps | AsyncSelectProps
 
 const FancySelect = (props: Props, ref: React.LegacyRef<HTMLDivElement>) => {
   const menuZIndex = useToken('zIndices', 'dropdown');
   const { colorMode } = useColorMode();
 
-  const styles = React.useMemo(() => ({
-    menuPortal: (provided: CSSObjectWithLabel) => ({ ...provided, zIndex: menuZIndex }),
-  }), [ menuZIndex ]);
+  const styles = React.useMemo(
+    () => ({
+      menuPortal: (provided: CSSObjectWithLabel) => ({
+        ...provided,
+        zIndex: menuZIndex,
+        background: 'red',
+      }),
+    }),
+    [ menuZIndex ],
+  );
 
-  const chakraStyles = React.useMemo(() => getChakraStyles(colorMode), [ colorMode ]);
+  const chakraStyles = React.useMemo(
+    () => getChakraStyles(colorMode),
+    [ colorMode ],
+  );
 
   const SelectComponent = props.isAsync ? AsyncSelect : Select;
 

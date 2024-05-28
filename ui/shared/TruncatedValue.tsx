@@ -1,5 +1,5 @@
 import type { PlacementWithLogical } from '@chakra-ui/react';
-import { Skeleton, chakra } from '@chakra-ui/react';
+import { Skeleton, chakra, useColorModeValue } from '@chakra-ui/react';
 import React from 'react';
 
 import TruncatedTextTooltip from 'ui/shared/TruncatedTextTooltip';
@@ -17,6 +17,7 @@ const TruncatedValue = ({ className, isLoading, value, tooltipPlacement }: Props
       <Skeleton
         className={ className }
         isLoaded={ !isLoading }
+        color={ useColorModeValue('#1D2939', '#ffffff') }
         display="inline-block"
         whiteSpace="nowrap"
         overflow="hidden"

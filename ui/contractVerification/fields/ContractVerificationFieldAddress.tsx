@@ -1,4 +1,5 @@
 import { FormControl, Input, chakra } from '@chakra-ui/react';
+import { mode } from '@chakra-ui/theme-tools';
 import React from 'react';
 import type { ControllerRenderProps } from 'react-hook-form';
 import { Controller, useFormContext } from 'react-hook-form';
@@ -26,6 +27,9 @@ const ContractVerificationFieldAddress = ({ isReadOnly }: Props) => {
           { ...field }
           required
           isInvalid={ Boolean(error) }
+          _focus={{
+            borderColor: mode('primary.medium', 'primary.medium')({}),
+          }}
           maxLength={ ADDRESS_LENGTH }
           isDisabled={ formState.isSubmitting || isReadOnly }
           autoComplete="off"

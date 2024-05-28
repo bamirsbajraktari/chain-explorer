@@ -1,4 +1,4 @@
-import { Box, Heading, Flex, Text } from '@chakra-ui/react';
+import { Box, Heading, Flex, Text, useColorModeValue } from '@chakra-ui/react';
 import Image from 'next/image';
 import React from 'react';
 
@@ -22,15 +22,15 @@ const rollupFeature = config.features.rollup;
 const Home = () => {
   return (
     <Box as="main">
-      <Box w="full" backgroundColor="#1D293980" py="12px" px="16px" height="fit-content" mb={ 6 } borderRadius="12px">
+      <Box w="full" backgroundColor={ useColorModeValue('#F2F4F7', '#1D293980') } py="12px" px="16px" height="fit-content" mb={ 6 } borderRadius="12px">
         <Flex
           alignItems="center"
           gap="16px"
         >
           <IconSvg
             name="warning"
-            fill="#fff"
-            style={{ color: 'white' }}
+            fill={ useColorModeValue('blackAlpha.800', 'whiteAlpha.800') }
+            style={{ color: useColorModeValue('blackAlpha.800', 'whiteAlpha.800') }}
             height="5"
             width="5"
           />

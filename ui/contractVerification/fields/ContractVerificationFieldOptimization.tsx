@@ -1,4 +1,5 @@
 import { Flex, Input } from '@chakra-ui/react';
+import { mode } from '@chakra-ui/theme-tools';
 import React from 'react';
 import type { ControllerRenderProps } from 'react-hook-form';
 import { Controller, useFormContext } from 'react-hook-form';
@@ -44,6 +45,9 @@ const ContractVerificationFieldOptimization = () => {
         maxW="200px"
         flexShrink={ 1 }
         isInvalid={ Boolean(error) }
+        _focus={{
+          borderColor: mode('primary.dark', 'primary.medium')({}),
+        }}
       />
     );
   }, [ error, formState.isSubmitting ]);

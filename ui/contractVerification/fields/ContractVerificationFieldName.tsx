@@ -1,4 +1,5 @@
 import { chakra, Code, FormControl, Input } from '@chakra-ui/react';
+import { mode } from '@chakra-ui/theme-tools';
 import React from 'react';
 import type { ControllerRenderProps } from 'react-hook-form';
 import { Controller, useFormContext } from 'react-hook-form';
@@ -29,6 +30,9 @@ const ContractVerificationFieldName = ({ hint, isReadOnly }: Props) => {
           maxLength={ 255 }
           isDisabled={ formState.isSubmitting || isReadOnly }
           autoComplete="off"
+          _focus={{
+            borderColor: mode('primary.dark', 'primary.medium')({}),
+          }}
         />
         <InputPlaceholder text="Contract name" error={ error }/>
       </FormControl>

@@ -1,4 +1,5 @@
 import { Box, Button, Menu, MenuButton, MenuItemOption, MenuList, MenuOptionGroup, Text } from '@chakra-ui/react';
+import { mode } from '@chakra-ui/theme-tools';
 import React, { useCallback } from 'react';
 
 import IconSvg from 'ui/shared/IconSvg';
@@ -53,6 +54,7 @@ export function StatsDropdownMenu<T extends string>({ items, selectedId, onSelec
             <MenuItemOption
               key={ item.id }
               value={ item.id }
+              color={ selectedId === item.id ? mode('primary.medium', 'primary.medium')({}) : undefined }
             >
               { item.title }
             </MenuItemOption>

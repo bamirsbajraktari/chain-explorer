@@ -18,7 +18,7 @@ interface Props {
 
 const RawDataSnippet = ({ data, className, title, rightSlot, beforeSlot, textareaMaxHeight, showCopy = true, isLoading, contentProps }: Props) => {
   // see issue in theme/components/Textarea.ts
-  const bgColor = useColorModeValue('#f5f5f6', '#1a1b1b');
+  const bgColor = useColorModeValue('#f5f5f6', 'surface.primary');
   return (
     <Box className={ className } as="section" title={ title }>
       { (title || rightSlot || showCopy) && (

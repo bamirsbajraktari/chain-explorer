@@ -108,6 +108,7 @@ const ContractCode = ({ addressHash, contractQuery, channel }: Props) => {
     />
   ) : (
     <Button
+      variant="solid"
       size="sm"
       mr={ data?.is_partially_verified ? 0 : 3 }
       ml={ data?.is_partially_verified ? 0 : 'auto' }

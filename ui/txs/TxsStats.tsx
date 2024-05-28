@@ -43,6 +43,7 @@ const TxsStats = () => {
     >
       <StatsWidget
         label="Transactions"
+        icon="transactions"
         value={ Number(txsStatsQuery.data?.transactions_count_24h).toLocaleString() }
         period="24h"
         isLoading={ txsStatsQuery.isPlaceholderData }
@@ -50,12 +51,14 @@ const TxsStats = () => {
       />
       <StatsWidget
         label="Pending transactions"
+        icon="clock"
         value={ Number(txsStatsQuery.data?.pending_transactions_count).toLocaleString() }
         period="1h"
         isLoading={ txsStatsQuery.isPlaceholderData }
       />
       <StatsWidget
         label="Transactions fees"
+        icon="wallet"
         value={
           (Number(txsStatsQuery.data?.transaction_fees_sum_24h) / (10 ** config.chain.currency.decimals))
             .toLocaleString(undefined, { maximumFractionDigits: 2 })
@@ -67,6 +70,7 @@ const TxsStats = () => {
       />
       <StatsWidget
         label="Avg. transaction fee"
+        icon="wallet"
         value={ txFeeAvg.usd ? txFeeAvg.usd : txFeeAvg.valueStr }
         valuePrefix={ txFeeAvg.usd ? '$' : undefined }
         valuePostfix={ txFeeAvg.usd ? undefined : thinsp + config.chain.currency.symbol }

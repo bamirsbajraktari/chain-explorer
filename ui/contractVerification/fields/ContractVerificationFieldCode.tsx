@@ -1,4 +1,5 @@
 import { FormControl, Link, Textarea } from '@chakra-ui/react';
+import { mode } from '@chakra-ui/theme-tools';
 import React from 'react';
 import type { ControllerRenderProps } from 'react-hook-form';
 import { useFormContext, Controller } from 'react-hook-form';
@@ -27,6 +28,9 @@ const ContractVerificationFieldCode = ({ isVyper }: Props) => {
           isInvalid={ Boolean(error) }
           isDisabled={ formState.isSubmitting }
           required
+          _focus={{
+            borderColor: mode('primary.dark', 'primary.medium')({}),
+          }}
         />
         <InputPlaceholder text="Contract code"/>
         { error?.message && <FieldError message={ error?.message }/> }

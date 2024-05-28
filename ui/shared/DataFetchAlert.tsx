@@ -3,7 +3,7 @@ import React from 'react';
 
 const DataFetchAlert = ({ className }: { className?: string }) => {
   return (
-    <Alert status="warning" width="fit-content" className={ className }>
+    <Alert status="warning" width="fit-content" className={ className } colorScheme="yellow">
       <AlertDescription>
         Something went wrong. Try refreshing the page or come back later.
       </AlertDescription>

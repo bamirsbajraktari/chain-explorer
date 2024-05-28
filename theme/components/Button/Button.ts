@@ -3,27 +3,27 @@ import { mode } from '@chakra-ui/theme-tools';
 import { runIfFn } from '@chakra-ui/utils';
 
 const variantSolid = defineStyle((props) => {
-  const { colorScheme: c } = props;
+  // const { colorScheme: c } = props;
 
-  if (c === 'gray') {
-    const bg = mode(`gray.100`, `whiteAlpha.200`)(props);
+  // if (c === 'gray') {
+  //   const bg = mode(`primary.dark`, `primary.medium`)(props);
 
-    return {
-      bg,
-      _hover: {
-        bg: mode(`gray.200`, `whiteAlpha.300`)(props),
-        _disabled: {
-          bg,
-        },
-      },
-      _active: { bg: mode(`gray.300`, `whiteAlpha.400`)(props) },
-    };
-  }
+  //   return {
+  //     bg,
+  //     _hover: {
+  //       bg: mode(`gray.200`, `whiteAlpha.300`)(props),
+  //       _disabled: {
+  //         bg,
+  //       },
+  //     },
+  //     _active: { bg: mode(`gray.300`, `whiteAlpha.400`)(props) },
+  //   };
+  // }
 
-  const bg = `${ c }.600`;
-  const color = 'white';
-  const hoverBg = `${ c }.400`;
-  const activeBg = `${ c }.700`;
+  const bg = mode(`primary.dark`, `primary.medium`)(props);
+  const color = 'black';
+  const hoverBg = mode(`primary.medium`, `primary.dark`)(props);
+  const activeBg = mode(`primary.light`, `primary.light`)(props);
 
   return {
     bg,

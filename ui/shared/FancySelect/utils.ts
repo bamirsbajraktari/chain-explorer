@@ -1,4 +1,5 @@
-import type { ColorMode } from '@chakra-ui/react';
+import type ColorMode from '@chakra-ui/react';
+import { mode } from '@chakra-ui/theme-tools';
 import type { Size, ChakraStylesConfig } from 'chakra-react-select';
 
 import type { Option } from './types';
@@ -49,6 +50,16 @@ const getChakraStyles: (colorMode: ColorMode) => ChakraStylesConfig<Option> = (c
     control: (provided, state) => ({
       ...provided,
       borderColor: state.hasValue ? filledInputBorderColor : emptyInputBorderColor,
+      _focus: {
+        borderColor: mode('primary.dark', 'primary.medium')({}),
+      },
+    }),
+    option: (option) => ({
+      ...option,
+      _selected: {
+        background: mode('primary.dark', 'primary.medium')({}),
+        color: mode('#000000', '#000000')({}),
+      },
     }),
     inputContainer: (provided) => ({
       ...provided,

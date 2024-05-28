@@ -1,4 +1,9 @@
 const colors = {
+  surface: {
+    primary: '#1D2939',
+    secondary: '#101828',
+    third: '#FFFFFF12',
+  },
   primary: {
     medium: '#f2f230',
     light: '#E0FA97',

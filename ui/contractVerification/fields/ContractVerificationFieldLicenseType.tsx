@@ -22,6 +22,7 @@ const ContractVerificationFieldLicenseType = () => {
     return (
       <FancySelect
         { ...field }
+
         options={ options }
         size={ isMobile ? 'md' : 'lg' }
         placeholder="Contract license"

@@ -104,7 +104,7 @@ const NavigationDesktop = () => {
         ) }
       </Box>
       <Box as="nav" mt={ 8 } w="100%">
-        <VStack as="ul" spacing="1" alignItems="flex-start">
+        <VStack as="ul" spacing="0" alignItems="flex-start">
           { mainNavItems.map(item => {
             if (isGroupItem(item)) {
               return (

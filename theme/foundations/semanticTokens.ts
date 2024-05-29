@@ -9,7 +9,7 @@ const semanticTokens = {
       _dark: 'whiteAlpha.800',
     },
     text_secondary: {
-      'default': '#667085',
+      'default': '#857b66',
       _dark: 'gray.400',
     },
     link: {
@@ -17,7 +17,8 @@ const semanticTokens = {
       _dark: 'blue.300',
     },
     link_hovered: {
-      'default': 'primary.medium',
+      'default': 'primary.dark',
+      _dark: 'primary.medium',
     },
     error: {
       'default': 'red.400',

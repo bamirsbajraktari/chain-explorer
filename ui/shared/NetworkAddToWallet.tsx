@@ -1,4 +1,4 @@
-import { Button } from '@chakra-ui/react';
+import { Button, useColorModeValue } from '@chakra-ui/react';
 import React from 'react';
 
 import config from 'configs/app';
@@ -19,6 +19,8 @@ const NetworkAddToWallet = ({ isTopNav }: Props) => {
   const toast = useToast();
   const { provider, wallet } = useProvider();
   const addOrSwitchChain = useAddOrSwitchChain();
+
+  const buttonColors = useColorModeValue('primary.dark', 'primary.medium');
 
   const handleClick = React.useCallback(async() => {
     if (!wallet || !provider) {
@@ -59,7 +61,7 @@ const NetworkAddToWallet = ({ isTopNav }: Props) => {
   }
 
   return (
-    <Button variant="outline" borderColor="#f2f230" color="#f2f230" size={ isTopNav ? 'xs' : 'sm' } onClick={ handleClick }>
+    <Button variant="outline" borderColor={ buttonColors } color={ buttonColors } size={ isTopNav ? 'xs' : 'sm' } onClick={ handleClick }>
       <IconSvg name={ WALLETS_INFO[wallet].icon } boxSize={ 5 } mr={ 2 }/>
         Add { config.chain.name }
     </Button>

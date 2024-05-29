@@ -5,6 +5,7 @@ import {
   Text,
   Grid,
   Skeleton,
+  useColorModeValue,
 } from '@chakra-ui/react';
 import React from 'react';
 
@@ -42,9 +43,9 @@ const LatestTxsItem = ({ tx, isLoading }: Props) => {
       width="100%"
       minW="700px"
       borderTop="1px solid"
-      borderColor="#344054"
+      borderColor={ useColorModeValue('gray.400', '#344054') }
       p={ 4 }
-      _last={{ borderBottom: '1px solid', borderColor: '#344054' }}
+      _last={{ borderBottom: '1px solid', borderColor: useColorModeValue('gray.400', '#344054') }}
       display={{ base: 'none', lg: 'grid' }}
     >
       <Flex overflow="hidden" w="100%">

@@ -28,7 +28,7 @@ const ContractVerificationFieldAddress = ({ isReadOnly }: Props) => {
           required
           isInvalid={ Boolean(error) }
           _focus={{
-            borderColor: mode('primary.medium', 'primary.medium')({}),
+            borderColor: mode('primary.dark', 'primary.medium')({}),
           }}
           maxLength={ ADDRESS_LENGTH }
           isDisabled={ formState.isSubmitting || isReadOnly }

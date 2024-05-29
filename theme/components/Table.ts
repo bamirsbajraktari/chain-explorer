@@ -17,14 +17,14 @@ const variantSimple = definePartsStyle((props) => {
       border: 0,
       color: mode('blackAlpha.700', 'whiteAlpha.700')(props),
       // backgroundColor: mode('blackAlpha.100', 'whiteAlpha.200')(props),
-      backgroundColor: '#1D2939',
+      backgroundColor: mode('#F2F4F7', '#1D2939')(props),
       ...transitionProps,
     },
     thead: {
       ...transitionProps,
     },
     td: {
-      borderColor: '#344054',
+      borderColor: mode('gray.400', '#344054')(props),
       ...transitionProps,
     },
   };

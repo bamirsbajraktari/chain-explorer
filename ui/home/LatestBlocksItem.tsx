@@ -3,6 +3,7 @@ import {
   Flex,
   Grid,
   Skeleton,
+  useColorModeValue,
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import React from 'react';
@@ -33,7 +34,7 @@ const LatestBlocksItem = ({ block, isLoading }: Props) => {
       transitionTimingFunction="linear"
       borderRadius="md"
       border="1px solid"
-      borderColor="#667085"
+      borderColor={ useColorModeValue('gray.400', '#667085') }
       p={ 6 }
     >
       <Flex alignItems="center" overflow="hidden" w="100%" mb={ 3 }>

@@ -42,6 +42,7 @@ const NavLinkGroupDesktop = ({ item, isCollapsed }: Props) => {
             w={{ lg: isExpanded ? '180px' : '60px', xl: isCollapsed ? '60px' : '180px' }}
             pl={{ lg: isExpanded ? 3 : '15px', xl: isCollapsed ? '15px' : 3 }}
             pr={{ lg: isExpanded ? 0 : '15px', xl: isCollapsed ? '15px' : 0 }}
+            py="7px"
             aria-label={ `${ item.text } link group` }
             position="relative"
             _hover={{

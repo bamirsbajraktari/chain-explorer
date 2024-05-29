@@ -1,5 +1,5 @@
 import type { StyleProps, ThemingProps } from '@chakra-ui/react';
-import { Box, Skeleton, Tab, TabList } from '@chakra-ui/react';
+import { Box, Skeleton, Tab, TabList, useColorModeValue } from '@chakra-ui/react';
 import React from 'react';
 
 import { useScrollDirection } from 'lib/contexts/scrollDirection';
@@ -59,7 +59,7 @@ const AdaptiveTabsList = (props: Props) => {
         '-ms-overflow-style': 'none', /* IE and Edge */
         'scrollbar-width': 'none', /* Firefox */
       }}
-      bgColor="#0C111D"
+      bgColor={ useColorModeValue('#f9fafb', '#0C111D') }
       transitionProperty="top,box-shadow,background-color,color"
       transitionDuration="normal"
       transitionTimingFunction="ease"

@@ -11,7 +11,7 @@ import TopBarStats from './TopBarStats';
 const feature = config.features.swapButton;
 
 const TopBar = () => {
-  const bgColor = useColorModeValue('gray.50', 'whiteAlpha.100');
+  const bgColor = useColorModeValue('#F2F4F7', 'whiteAlpha.100');
 
   return (
     <Flex
@@ -26,7 +26,12 @@ const TopBar = () => {
         { feature.isEnabled && (
           <>
             <SwapButton/>
-            <Divider mr={ 3 } ml={{ base: 2, sm: 3 }} height={ 4 } orientation="vertical"/>
+            <Divider
+              mr={ 3 }
+              ml={{ base: 2, sm: 3 }}
+              height={ 4 }
+              orientation="vertical"
+            />
           </>
         ) }
         <NetworkAddToWallet isTopNav={ true }/>

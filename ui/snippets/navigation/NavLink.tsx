@@ -72,6 +72,7 @@ const NavLink = ({
           xl: isCollapsed ? '15px' : 3,
         }
       }
+      py="7px"
       aria-label={ `${ item.text } link` }
       whiteSpace="nowrap"
       onClick={ onClick }

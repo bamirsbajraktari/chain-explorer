@@ -1,4 +1,4 @@
-import type ColorMode from '@chakra-ui/react';
+import type { ColorMode } from '@chakra-ui/react';
 import { mode } from '@chakra-ui/theme-tools';
 import type { Size, ChakraStylesConfig } from 'chakra-react-select';
 

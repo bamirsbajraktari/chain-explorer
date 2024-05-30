@@ -20,7 +20,7 @@ import IconSvg from '../IconSvg';
 type Props = {
   label: string;
   value: string;
-  icon: IconName;
+  icon?: IconName;
   valuePrefix?: string;
   valuePostfix?: string;
   hint?: string;
@@ -53,7 +53,7 @@ const Container = ({
 const StatsWidget = ({
   label,
   value,
-  icon,
+  icon = 'transactions',
   valuePrefix,
   valuePostfix,
   isLoading,

@@ -22,19 +22,48 @@ const rollupFeature = config.features.rollup;
 const Home = () => {
   return (
     <Box as="main">
-      <Box w="full" backgroundColor={ useColorModeValue('#F2F4F7', '#1D293980') } py="12px" px="16px" height="fit-content" mb={ 6 } borderRadius="12px">
+      <Box
+        w="full"
+        backgroundColor={ useColorModeValue('#F2F4F7', '#1D293980') }
+        py="12px"
+        px="16px"
+        height="fit-content"
+        mb={ 6 }
+        borderRadius="12px"
+      >
         <Flex
           alignItems="center"
           gap="16px"
+          sx={{
+            '@media (max-width: 600px)': {
+              alignItems: 'flex-start',
+              WebkitAlignItems: 'flex-start',
+              WebkitBoxAlign: 'flex-start',
+            },
+          }}
         >
           <IconSvg
             name="warning"
             fill={ useColorModeValue('blackAlpha.800', 'whiteAlpha.800') }
-            style={{ color: useColorModeValue('blackAlpha.800', 'whiteAlpha.800') }}
+            style={{
+              color: useColorModeValue('blackAlpha.800', 'whiteAlpha.800'),
+            }}
             height="5"
             width="5"
+            sx={{
+              '@media (max-width: 600px)': {
+                height: '30px',
+                width: '30px',
+              },
+            }}
           />
-          <Text>
+          <Text
+            sx={{
+              '@media (max-width: 600px)': {
+                width: '70%',
+              },
+            }}
+          >
             98% Blocks Indexed - We’re indexing this chain right now. Some of
             the counts may be inaccurate.
           </Text>

@@ -1,5 +1,5 @@
 import { Box, Flex, Skeleton, Text, useColorModeValue } from '@chakra-ui/react';
-import { mode } from '@chakra-ui/theme-tools';
+// import { mode } from '@chakra-ui/theme-tools';
 import React from 'react';
 
 import config from 'configs/app';
@@ -43,6 +43,7 @@ const ChainIndicators = () => {
   const bgColorMobile = useColorModeValue('white', 'black');
   const listBgColorDesktop = useColorModeValue('gray.50', 'black');
   const listBgColorMobile = useColorModeValue('gray.50', 'gray.900');
+  const titleColor = useColorModeValue('blackAlpha.800', '#ffffff');
 
   if (indicators.length === 0) {
     return null;
@@ -99,7 +100,7 @@ const ChainIndicators = () => {
     >
       <Flex flexGrow={ 1 } flexDir="column" order={{ base: 2, lg: 1 }} p={{ base: 6, lg: 0 }}>
         <Flex alignItems="center">
-          <Text fontWeight={ 500 } fontFamily="heading" fontSize="lg" color={ mode('blackAlpha.800', '#fff')({}) }>{ indicator?.title }</Text>
+          <Text fontWeight={ 500 } fontFamily="heading" fontSize="lg" color={ titleColor }>{ indicator?.title }</Text>
           { indicator?.hint && <Hint label={ indicator.hint } ml={ 1 }/> }
         </Flex>
         <Box mb={ 4 } style={{ color: 'white !important' }}>
